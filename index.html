@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TeamTask – Quản lý công việc</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="board">
+    <header class="board-header">
+      <h1>TeamTask</h1>
+      <p class="subtitle">Danh sách công việc của nhóm</p>
+    </header>
+
+    <form id="task-form" class="task-form">
+      <input type="text" id="task-input" placeholder="Nhập công việc mới..." autocomplete="off" />
+      <button type="submit" id="add-btn">Thêm</button>
+    </form>
+
+    <ul id="task-list" class="task-list"></ul>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
