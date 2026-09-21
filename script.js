@@ -6,6 +6,14 @@ document.getElementById('task-form').addEventListener('submit', function (e) {
 });
 
 function addTask() {
+  const input = document.getElementById('task-input');
+  const value = input.value.trim(); // sua theo gop y review cua Long
+
+  if (value === '') return; // khong cho them cong viec trong
+
+  tasks.push({ text: value, completed: false });
+  input.value = '';
+  renderTasks();
 }
 
 function renderTasks() {
@@ -35,6 +43,12 @@ function renderTasks() {
 
     li.prepend(checkbox);
     li.appendChild(deleteBtn);
+
+    const span = document.createElement('span');
+    span.className = 'task-text';
+    span.textContent = task.text;
+    li.appendChild(span);
+
     list.appendChild(li);
   });
 }
