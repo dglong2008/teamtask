@@ -9,6 +9,8 @@ function addTask() {
   const input = document.getElementById('task-input');
   const value = input.value;
 
+  if (value === '') return; // khong cho them cong viec trong
+
   tasks.push({ text: value, completed: false });
   input.value = '';
   renderTasks();
