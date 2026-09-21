@@ -6,7 +6,12 @@ document.getElementById('task-form').addEventListener('submit', function (e) {
 });
 
 function addTask() {
+  const input = document.getElementById('task-input');
+  const value = input.value;
 
+  tasks.push({ text: value, completed: false });
+  input.value = '';
+  renderTasks();
 }
 
 function renderTasks() {
@@ -15,7 +20,12 @@ function renderTasks() {
 
   tasks.forEach(function (task) {
     const li = document.createElement('li');
-    li.textContent = task.text;
+
+    const span = document.createElement('span');
+    span.className = 'task-text';
+    span.textContent = task.text;
+    li.appendChild(span);
+
     list.appendChild(li);
   });
 }
